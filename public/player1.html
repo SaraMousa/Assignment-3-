@@ -14,11 +14,11 @@
                 </a-entity>
 
 
-      <a-box id= "box1" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box id= "box2" position="0 1.25 -5" rotation="0 45 0" color="#6B1C1C"></a-box>
-      <a-box id= "box3" position="1 0.75 -3" rotation="0 45 0" color="#FFC65D"></a-box>
+      <a-box id= "box1" position="-1 0.5 -3" rotation="0 45 0" color="#FF0000"></a-box>
+      <a-box id= "box2" position="0 1.25 -5" rotation="0 45 0" color="#21AC38"></a-box>
+      <a-box id= "box3" position="1 0.75 -3" rotation="0 45 0" color="#0900FF"></a-box>
    
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="FFFFFF"></a-plane>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#FFFFFF"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
 
@@ -32,7 +32,14 @@
          });
     
     document.querySelector('#box1').addEventListener('click', function() {
-        socket.emit('red');
+        socket.emit('message',{hello: 'world'});
+    });
+
+    document.querySelector('#box2').addEventListener('click', function() {
+        socket.emit('green');
+    });
+    document.querySelector('#box3').addEventListener('click', function() {
+        socket.emit('blue');
 
 
     });
